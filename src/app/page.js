@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Navbar from "./components/share/Navbar";
+import Banner from "./components/share/Banner";
 
 export default function Home() {
   return (
-   <h1>
-    Hellow car Industry
-   </h1>
+   <>
+<Banner/>
+   </>
   );
 }
