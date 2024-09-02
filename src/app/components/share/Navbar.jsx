@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <Link href={"/"}>
-            <Image alt="logo" src="/assets/logo.svg" height={60} width={100} />
+            <Image alt="logo" src="/assets/logo.png" height={60} width={100} />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
