@@ -9,6 +9,7 @@ import { ToastContainer } from "react-toastify";
 import { Suspense } from "react";
 import Navbar from "./components/share/Navbar";
 import Footer from "./components/share/Footer";
+import Authprovider from "@/lib/services/Authprovider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -25,11 +26,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Suspense>
       <ToastContainer/>
-        {/* <AuthProvider> */}
+        <Authprovider>
           <Navbar />
           {children}
           <Footer />
-        {/* </AuthProvider> */}
+        </Authprovider>
         </Suspense>
       </body>
     </html>

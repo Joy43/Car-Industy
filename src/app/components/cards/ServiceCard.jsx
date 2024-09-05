@@ -10,8 +10,8 @@ export default function ServiceCard({ service }) {
         <div className="relative">
           <Image 
             src={img} 
-            width={400} 
-            height={400} 
+            width={500} 
+            height={500} 
             alt={title || 'Service Image'}
             className="object-cover w-full h-full"
           />
@@ -21,20 +21,20 @@ export default function ServiceCard({ service }) {
             </div>
           )}
         </div>
-        <div className="p-4 bg-white dark:bg-gray-800">
-          <h3 className="text-lg font-semibold mb-2 text-blue-600 dark:text-blue-300">
+        <div className="p-4 bg-[#CCCFF3] ">
+          <h3 className="text-lg font-semibold mb-2 text-[#262853] ">
             {title}
           </h3>
-          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+          <p className="text-[#3D2B57]  text-sm mb-4 line-clamp-2">
             {description}
           </p>
           <div className="flex items-center justify-between">
             {price && (
-              <span className="font-bold text-lg text-black dark:text-white">
+              <span className="font-bold text-lg text-[#72306C]">
                 ${price}
               </span>
             )}
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-300 ease-in-out">
+            <button className="bg-[#13233F] hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition-colors duration-300 ease-in-out">
               Buy Now
             </button>
           </div>

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",  // This ensures that paths are resolved relative to the root directory.
     "paths": {
       "@/*": ["./src/*"]
     }

@@ -7,40 +7,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.ibb.co',
+        hostname: '*',
         port: '',
         pathname: '**',
       },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.clerk.dev',
-        port: '',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.pexels.com',
-        port: '',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'pixahive.com',
-        port: '',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i.postimg.cc',
-        port: '',
-        pathname: '**',
-      },
+      
+      
+     
     ],
   },
 
