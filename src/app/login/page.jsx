@@ -58,7 +58,7 @@ if(session.status=='authenticated'){
                         <div className="px-4 py-3">
                             
                             <svg className="h-6 w-6" viewBox="0 0 40 40">
-                                {/* SVG paths for Google icon */}
+                              
                                 <path d="..." fill="#FFC107" />
                                 <path d="..." fill="#FF3D00" />
                                 <path d="..." fill="#4CAF50" />

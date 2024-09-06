@@ -1,22 +1,36 @@
-import React from "react";
+'use client'
+import  { useEffect, useState } from "react";
 import ServiceCard from "../cards/ServiceCard";
-import { services } from "@/lib/services";
+
+const getCars = async () => {
+  const res = await fetch('http://localhost:3000/cars/api/getall');
+  const cars = await res.json();
+  return cars;
+};
 
 const Services = () => {
-    console.log(services)
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      const data = await getCars();
+      setCars(data.cars); 
+    };
+
+    fetchCars();
+  }, []);
+
   return (
     <div className="bg-base-200">
-        {/* ------------ into hero ---------------- */}
+      {/* ------------ into hero ---------------- */}
       <div className="">
         <div className="mx-auto flex flex-col items-center py-12 sm:py-24">
           <div className="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col mb-5 sm:mb-10">
-            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-center text-gray-800  font-black leading-10">
-              Let's not stress for{" "}
-              <span className="text-violet-800 ">Website</span>{" "}
-              designs.
+            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-10">
+              Let's not stress for <span className="text-violet-800">Website</span> designs.
             </h1>
-            <p className="mt-5 sm:mt-10 lg:w-10/12 text-gray-600  font-normal text-center text-xl">
-              A Community-built Tailwind component library.
+            <p className="mt-5 sm:mt-10 lg:w-10/12 text-gray-600 font-normal text-center text-xl">
+              A Community-built car industry.
             </p>
           </div>
           <div className="flex w-11/12 md:w-8/12 xl:w-6/12">
@@ -24,7 +38,7 @@ const Services = () => {
               <input
                 type="text"
                 name="q"
-                className="w-full p-3 rounded-md rounded-r-none border border-2 border-gray-300 placeholder-current  dark:text-gray-300 dark:border-none"
+                className="w-full p-3 rounded-md rounded-r-none border border-2 border-gray-300 placeholder-current dark:text-gray-300 dark:border-none"
                 placeholder="keyword"
               />
               <button className="inline-flex items-center gap-2 bg-violet-700 text-white text-lg font-semibold py-3 px-6 rounded-r-md">
@@ -43,18 +57,14 @@ const Services = () => {
         </div>
       </div>
 
-      {/* -------------------card-------------- */}
+      {/* ------------------- card -------------- */}
 
-
-<div className=" container mx-auto mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 ">
-
-{
-    services.map((service)=>(
-        <ServiceCard service={service} key={service._id}/>
-    ))
-}
-</div>
-
+      <div className="container mx-auto mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {cars.length > 0 &&
+          cars.map((service) => (
+            <ServiceCard service={service} key={service._id} />
+          ))}
+      </div>
     </div>
   );
 };

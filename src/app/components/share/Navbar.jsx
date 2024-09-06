@@ -10,11 +10,13 @@ const Navbar = () => {
   return (
     <div className="bg-base-100  text-slate-900 border-b-[1px] py-2">
       <div className="navbar container mx-auto">
-        <div className="navbar-start">
+        {/* ------------logo----------------- */}
+        <div className="navbar-start bg-transparent">
           <Link href={"/"}>
-            <Image alt="logo" src="/assets/logo.png" height={60} width={100} />
+            <Image alt="logo" src="/assets/logo.png" height={60} width={80} />
           </Link>
         </div>
+        {/* ------------------- nav iteam------------ */}
         <div className="navbar-center hidden lg:flex">
           <div className="flex items-center space-x-6">
             {navItems.map((item) => (
@@ -30,12 +32,12 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="flex space-x-3 items-center">
-          <IoCartOutline className="text-xl"/>
-          <IoSearchSharp className="text-xl"/>
+          {/* <IoCartOutline className="text-xl"/>
+          <IoSearchSharp className="text-xl"/> */}
           <a className="btn btn-outline btn-primary px-8">Appointment</a>
-          <div>
+          {/* <div>
             <Image alt={session?.data?.user?.name} src={session?.data?.user?.image} height={50} width={50} className="rounded-full"/>
-          </div>
+          </div> */}
           { session?.status === 'loading' &&
             <h6>Loading....</h6>
             }
