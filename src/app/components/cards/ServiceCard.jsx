@@ -1,8 +1,10 @@
+
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 export default function ServiceCard({ service }) {
-  const { title, img, price, description } = service || {};
+  const { title, img, price, description,_id } = service || {};
 
   return (
     <div className="p-4 sm:p-6 lg:p-8">
@@ -12,10 +14,10 @@ export default function ServiceCard({ service }) {
           <div className="w-full h-[220px] overflow-hidden">
             <Image
               src={img}
-              width={320}  // All images will have the same width
-              height={220} // All images will have the same height
+              width={320}  
+              height={220} 
               alt={title || 'Service Image'}
-              className="object-cover w-full h-full" // Ensures the image fills the container
+              className="object-cover w-full h-full" 
             />
           </div>
           {price && (
@@ -37,9 +39,12 @@ export default function ServiceCard({ service }) {
                 ${price}
               </span>
             )}
-            <button className="bg-[#37474F] hover:bg-[#263238] text-white font-semibold py-2 px-4 rounded-md transition-colors duration-300 ease-in-out">
-              Buy Now
+           <Link href={`/cars/${_id}`}>
+           <button className="bg-[#37474F] hover:bg-[#263238] text-white font-semibold py-2 px-4 rounded-md transition-colors duration-300 ease-in-out">
+           View Deatils
             </button>
+           
+           </Link>
           </div>
         </div>
       </div>

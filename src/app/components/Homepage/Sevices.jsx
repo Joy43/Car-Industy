@@ -1,24 +1,25 @@
 'use client'
-import  { useEffect, useState } from "react";
-import ServiceCard from "../cards/ServiceCard";
+import ServiceCard from './../cards/ServiceCard';
+import { getCars } from './../../../lib/services/getServices';
 
-const getCars = async () => {
-  const res = await fetch('http://localhost:3000/cars/api/getall');
-  const cars = await res.json();
-  return cars;
-};
 
-const Services = () => {
-  const [cars, setCars] = useState([]);
+// const getCars = async () => {
+//   const res = await fetch('http://localhost:3000/cars/api/getall');
+//   const cars = await res.json();
+//   return cars;
+// };
 
-  useEffect(() => {
-    const fetchCars = async () => {
-      const data = await getCars();
-      setCars(data.cars); 
-    };
+const Services = async() => {
+  // const [cars, setCars] = useState([]);
+const{cars}=await getCars()
+  // useEffect(() => {
+  //   const fetchCars = async () => {
+  //     const data = await getCars();
+  //     setCars(data.cars); 
+  //   };
 
-    fetchCars();
-  }, []);
+  //   fetchCars();
+  // }, []);
 
   return (
     <div className="bg-base-200">
